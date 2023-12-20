@@ -59,7 +59,7 @@ func main() {
 	fmt.Println("channel:", t)
 	fmt.Println("map:", u)
 	fmt.Println("pointer:", v)
-	fmt.Println("function:", w)
+	fmt.Printf("function:%v\n", w)
 	fmt.Println("struct:", x)
 	fmt.Println("struct:", y)
 }
