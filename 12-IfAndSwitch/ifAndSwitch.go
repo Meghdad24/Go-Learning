@@ -48,4 +48,38 @@ func main() {
 	case false:
 		fmt.Println("FALSE!!!")
 	}
+
+	//Self-Exam
+	switch f(); {
+	case true:
+		println(1)
+	case false:
+		println(0)
+	}
+
+	switch f() 
+	{
+	case true:
+		println(1)
+	case false:
+		println(0)
+	}
+
+	switch f() {
+	case true:
+		println(1)
+	case false:
+		println(0)
+	}
+
+	switch f(); false {
+	case true:
+		println(1)
+	case false:
+		println(0)
+	}
+}
+
+func f() bool {
+	return false
 }
