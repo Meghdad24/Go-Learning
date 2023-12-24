@@ -64,4 +64,42 @@ func main() {
 	}
 	fmt.Println()
 
+	x := make(map[string]int)
+	a, ok := x["num"]
+	fmt.Println(a, ok) // 0 false
+
+	x["num"] = 0
+	b, ok := x["num"]
+	fmt.Println(b, ok, "\n")
+
+	var companyProfile = map[string]string{
+		"name":    "companyName",
+		"address": "sampleAddress",
+	}
+	var editorMap = companyProfile // == editorMap := companyProfile
+
+	fmt.Println(companyProfile["name"], "\t", companyProfile["address"])
+	//companyName 	 sampleAddress
+	fmt.Println(editorMap["name"], "\t", editorMap["address"])
+	//companyName 	 sampleAddress
+
+	editorMap["name"] = "new name"
+	editorMap["address"] = "new address"
+
+	//reference map also edited when editor map edit
+	fmt.Println(companyProfile["name"], "\t", companyProfile["address"])
+	//new name 	 new address
+	fmt.Println(editorMap["name"], "\t", editorMap["address"], "\n")
+	//new name 	 new address
+
+	animals := make(map[int][]string) // nil map of string-int pairs
+	animals[0] = []string{"Gopher", "running", "rodent"}
+	animals[1] = []string{"owl", "flying", "carnivorous"}
+	animals[2] = []string{"cheetah", "running", "carnivorous"}
+	animals[3] = []string{"eagle", "flying", "carnivorous"}
+	animals[4] = []string{"lion", "running", "carnivorous"}
+
+	for index, animal := range animals {
+		fmt.Printf("%v- %s is %s animal and can %s \n", index, animal[0], animal[2], animal[1])
+	}
 }
