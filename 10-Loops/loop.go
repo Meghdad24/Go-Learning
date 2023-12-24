@@ -2,7 +2,7 @@ package main
 
 import "fmt"
 
-func main() {
+func loop() {
 	var sum int
 
 	for i := 0; i < 10; i++ {
@@ -71,4 +71,66 @@ func main() {
 	for _, v := range sample {
 		fmt.Printf("value :%s\n", v)
 	}
+
+	//----------------------------------String---------------------------
+
+	samplee := "a£b"
+
+	//With index and value
+	fmt.Println("Both Index and Value")
+	for i, letter := range samplee {
+		fmt.Printf("Start Index: %d Value:%s\n", i, string(letter))
+	}
+
+	//Only value
+	fmt.Println("\nOnly value")
+	for _, letter := range samplee {
+		fmt.Printf("Value:%s\n", string(letter))
+	}
+
+	//Only index
+	fmt.Println("\nOnly Index")
+	for i := range samplee {
+		fmt.Printf("Start Index: %d\n", i)
+	}
+
+	//------------------------------break & lable------------------------
+
+	fmt.Println("\nBreak concept")
+	summ := 0
+	for {
+		summ++
+		if summ == 10 {
+			break
+		}
+	}
+
+	fmt.Printf("\n%v\nnow this line will execute\n\n", summ)
+
+	letterss := []string{"a", "b", "c"}
+
+	for i := 1; i < 10; i++ {
+		// define a lable with name 'second' for this loop
+	second:
+		for i := 2; i < 9; i++ {
+			for _, l := range letterss {
+				if l == "b" {
+					// break the loop with second lable
+					break second
+				}
+				fmt.Println(l)
+			}
+		}
+	}
+
+	fmt.Print("\nContineu concpet\n")
+
+	//--------------------------------continue--------------------------
+	for i := 1; i < 10; i++ {
+		if i%2 == 0 {
+			continue
+		}
+		fmt.Println(i)
+	}
+
 }
