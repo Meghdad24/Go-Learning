@@ -15,5 +15,4 @@ func main() {
 		currentNumber = currentNumber + pastNumber
 		pastNumber = temp
 	}
-
 }
