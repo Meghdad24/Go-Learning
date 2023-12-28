@@ -1,12 +1,12 @@
 package main
 
 import (
-	"fmt"
+	format "fmt"
 	// "time"
 	// "math"
 	// "math/rand"
 )
 
 func main() {
-	fmt.Println("Hello GoFarsi!")
+	format.Println("Hello GoFarsi!")
 }
