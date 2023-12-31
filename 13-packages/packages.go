@@ -1,13 +1,21 @@
 package main
 
-import "encoding/json"
+import (
+	"net/http"
 
-type jSON struct {
-	//In order to allow the JSON library to access the Name variable, the first letter must be capital
-	Name string `json:"name"`
-}
+	"github.com/gin-gonic/gin"
+)
+
+// For adding package:
+// go get -u github.com/gin-gonic/gin
+// go mod tidy
 
 func main() {
-	var data []byte
-	json.Unmarshal(data, &jSON{})
+	r := gin.Default()
+	r.GET("/ping", func(c *gin.Context) {
+		c.JSON(http.StatusOK, gin.H{
+			"message": "pong",
+		})
+	})
+	r.Run() // listen and serve on 0.0.0.0:8080 (for windows "localhost:8080")
 }
