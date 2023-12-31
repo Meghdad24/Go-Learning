@@ -1,12 +1,13 @@
 package main
 
-import (
-	format "fmt"
-	// "time"
-	// "math"
-	// "math/rand"
-)
+import "encoding/json"
+
+type jSON struct {
+	//In order to allow the JSON library to access the Name variable, the first letter must be capital
+	Name string `json:"name"`
+}
 
 func main() {
-	format.Println("Hello GoFarsi!")
+	var data []byte
+	json.Unmarshal(data, &jSON{})
 }
