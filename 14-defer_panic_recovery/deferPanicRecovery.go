@@ -33,12 +33,25 @@ import "fmt"
 
 //---------------------------PANIC------------------------------
 
+// func main() {
+
+// 	a := []string{"a", "b"}
+// 	print(a, 2)
+// }
+
+// func print(a []string, index int) {
+// 	fmt.Println(a[index])
+// }
+
 func main() {
 
 	a := []string{"a", "b"}
-	print(a, 2)
+	checkAndPrint(a, 2)
 }
 
-func print(a []string, index int) {
+func checkAndPrint(a []string, index int) {
+	if index > (len(a) - 1) {
+		panic("Out of bound access for slice")
+	}
 	fmt.Println(a[index])
 }
