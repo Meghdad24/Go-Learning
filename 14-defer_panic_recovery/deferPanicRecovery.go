@@ -1,9 +1,8 @@
 package main
 
-import (
-	"fmt"
-)
+import "fmt"
 
+//----------------------------v-DEFER--------------------------
 // func main() {
 // 	defer fmt.Println("world")
 // 	fmt.Println("hello")
@@ -24,10 +23,22 @@ import (
 // 	defer fmt.Println(i)
 // }
 
+// func main() {
+// 	i := 1
+// 	defer fmt.Println(i)
+// 	i++
+// 	fmt.Println(i)
+// 	fmt.Println("First")
+// }
+
+//---------------------------PANIC------------------------------
+
 func main() {
-	i := 1
-	defer fmt.Println(i)
-	i++
-	fmt.Println(i)
-	fmt.Println("First")
+
+	a := []string{"a", "b"}
+	print(a, 2)
+}
+
+func print(a []string, index int) {
+	fmt.Println(a[index])
 }
