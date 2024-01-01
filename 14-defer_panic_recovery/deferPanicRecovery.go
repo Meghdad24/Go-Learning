@@ -1,6 +1,9 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"runtime/debug"
+)
 
 //----------------------------v-DEFER--------------------------
 // func main() {
@@ -56,8 +59,28 @@ import "fmt"
 // 	fmt.Println(a[index])
 // }
 
-func main() {
+// func main() {
 
+// 	a := []string{"a", "b"}
+// 	checkAndPrint(a, 2)
+// 	fmt.Println("Exiting normally")
+// }
+
+// func checkAndPrint(a []string, index int) {
+// 	defer handleOutOfBounds()
+// 	if index > (len(a) - 1) {
+// 		panic("Out of bound access for slice")
+// 	}
+// 	fmt.Println(a[index])
+// }
+
+// func handleOutOfBounds() {
+// 	if r := recover(); r != nil {
+// 		fmt.Println("Recovering from panic:", r)
+// 	}
+// }
+
+func main() {
 	a := []string{"a", "b"}
 	checkAndPrint(a, 2)
 	fmt.Println("Exiting normally")
@@ -74,5 +97,7 @@ func checkAndPrint(a []string, index int) {
 func handleOutOfBounds() {
 	if r := recover(); r != nil {
 		fmt.Println("Recovering from panic:", r)
+		fmt.Println("Stack Trace:")
+		debug.PrintStack()
 	}
 }
